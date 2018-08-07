@@ -3,14 +3,14 @@ agent any
 stages{
 stage('compile stage'){
 	steps{
-			withMaven(maven: 'maven_3.5.4'){
+			withMaven(maven : 'maven_3.5.4'){
 			sh 'mvn clean compile'
 			}
 		}
 	}
-stage ('two'){
+stage ('test'){
 	steps{
-			withMaven(maven: 'maven_3.5.4'){
+			withMaven(maven : 'maven_3.5.4'){
 			sh('mvn test')
 			}
 		}
