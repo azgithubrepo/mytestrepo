@@ -1,19 +1,23 @@
 pipeline{
 agent any
 stages{
-stage('one'){
-steps{
-echo 'hello'
-}
-}
+stage('compile stage'){
+	steps{
+			withMaven(maven: 'maven_3.5.4'){
+			sh 'mvn clean compile'
+			}
+		}
+	}
 stage ('two'){
-steps{
-echo 'World'
-}
-}
+	steps{
+			withMaven(maven: 'maven_3.5.4'){
+			sh('mvn test')
+			}
+		}
+	}	
 stage ('three'){
 steps{
-echo 'Whatsup'
+echo 'hello all'
 }
 }
 
