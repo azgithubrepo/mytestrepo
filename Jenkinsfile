@@ -11,13 +11,13 @@ stage('compile stage'){
 stage ('test'){
 	steps{
 			withMaven(maven : 'maven_3.5.4'){
-			sh('mvn test')
+			sh('mvn test package')
 			}
 		}
 	}	
 stage ('Deploy into tomcat'){
 steps{
-sh 'scp target/*.war /home/ajay/Downloads/apache-tomcat-7.0.90/webapps/'
+sh 'scp  home/ajay/.jenkins/workspace/FirstPipeline/*.war /home/ajay/Downloads/apache-tomcat-7.0.90/webapps/'
 }
 }
 
