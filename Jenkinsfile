@@ -15,9 +15,9 @@ stage ('test'){
 			}
 		}
 	}	
-stage ('three'){
+stage ('Deploy into tomcat'){
 steps{
-echo 'hello all'
+sh 'scp target/*.war /home/ajay/Downloads/apache-tomcat-7.0.90/webapps/'
 }
 }
 
