@@ -17,7 +17,7 @@ stage ('test'){
 	}	
 stage ('Deploy into tomcat'){
 steps{
-sh 'scp  home/ajay/.jenkins/workspace/FirstPipeline/target/*.war /home/ajay/Downloads/apache-tomcat-7.0.90/webapps/'
+sh 'scp  /home/ajay/.jenkins/workspace/FirstPipeline/target/*.war /home/ajay/Downloads/apache-tomcat-7.0.90/webapps/'
 }
 }
 
