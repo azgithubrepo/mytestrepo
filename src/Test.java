@@ -1,6 +1,6 @@
 import java.util.*;
 class Test{
-	public static vois main(String arg[]){
+	public static void main(String args[]){
 		system.out.print("hello");
 }
 }
